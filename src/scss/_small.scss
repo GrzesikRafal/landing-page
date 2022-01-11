@@ -1,0 +1,22 @@
+@media(min-width:576px) {
+    //**HEADER**//
+
+    .header {
+        padding: 2em 2em;
+    }
+
+    //**SECTION**//
+    .section {
+        .benefits-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+
+            .benefits-item {
+                width: 43%;
+                margin-right: 0.5rem;
+
+            }
+        }
+    }
+}

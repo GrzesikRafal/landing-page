@@ -1,0 +1,24 @@
+$main-color:#4D13D1;
+$backround-color:#FBF8F3;
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.section-padding {
+    padding: 3rem 2em;
+
+}
+
+.section-background {
+    background-color: $backround-color;
+}
+
+@media(min-width:768px) {
+
+    .section-padding {
+        padding: 3rem;
+    }
+}

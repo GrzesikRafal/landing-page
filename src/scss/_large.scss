@@ -1,0 +1,28 @@
+@media(min-width:992px) {
+    //**SECTION**//
+
+    .section {
+        .benefits-container {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin-top: 3rem;
+
+            .benefits-item {
+                margin-right: 2rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .footer {
+        grid-template-columns: 2fr repeat(4, 1fr);
+
+        &>div:first-child {
+            grid-column-start: span 1;
+        }
+
+        &-item__description {
+            text-align: left;
+        }
+    }
+}

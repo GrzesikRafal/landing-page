@@ -1,0 +1,313 @@
+@import './_reset.scss';
+@import './_components.scss';
+@import './mixins';
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+//**NAVIGATION**//
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__item * {
+        text-decoration: none;
+    }
+
+    &__links * {
+        position: relative;
+        text-decoration: none;
+        border: none;
+        background: none;
+        color: black;
+
+        &:hover::after,
+        &:hover::before {
+            width: 50%;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: $main-color;
+            transition: width .5s;
+        }
+
+        &::before {
+            position: absolute;
+
+            content: '';
+            top: 100%;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: $main-color;
+            transition: width .5s;
+        }
+    }
+
+    &__logo {
+        z-index: 10;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    &__hamburger {
+        z-index: 10;
+
+        &>button {
+            border: none;
+            background: none;
+        }
+    }
+
+    &-desktop {
+        display: none;
+    }
+
+    &__account {
+        font-weight: bolder;
+
+        &-signup {
+            margin-left: 1em;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            background-color: $main-color;
+            color: $backround-color;
+        }
+    }
+}
+
+//**HEADER**//
+.header {
+    padding: 2rem;
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+
+        &__heading {
+            @include heading
+        }
+
+        &__description {
+            margin: 1rem 0;
+            line-height: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                @include button
+            }
+
+            &__item--primary {
+                text-decoration: none;
+                color: $backround-color;
+                background: $main-color;
+            }
+        }
+
+        .bonuses-container {
+display:flex;
+flex-direction: column;
+gap:2rem;
+
+            &__item {
+               display: flex;
+               gap:1rem;
+               
+                padding: 0.7rem 0;
+                font-size: 1.5rem;
+                text-align-last: left;
+
+            }
+        }
+    }
+
+    &__image {
+        img {
+            transform: translateY(-7%);
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .rating {
+        display: none;
+    }
+}
+
+//**SECTION LIGHT**//
+.section {
+    &__question {
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $main-color;
+    }
+
+    &__heading {
+        @include heading
+    }
+
+    .benefits-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .benefits-item {
+            margin: 2rem 0;
+            text-align: center;
+
+            &__title {
+                padding: 1.5rem 0;
+                font-weight: bold;
+            }
+
+            &__description {
+                line-height: 150%;
+            }
+        }
+    }
+}
+
+//**SECTION DARK**//
+.section {
+    overflow: hidden;
+
+    .bg-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 8px;
+        background: $main-color;
+    }
+
+    .informations {
+        padding: 2rem;
+        color: white;
+
+        &__heading {
+            @include heading
+        }
+
+        &__description {
+            margin: 2rem 0;
+            font-weight: lighter;
+            line-height: 150%;
+        }
+
+        &__button {
+            text-align: center;
+
+            & * {
+                @include button;
+                font-size: 1rem;
+                background-color: white;
+            }
+        }
+    }
+
+    .website {
+        object-fit: cover;
+        margin: 2rem;
+        margin-bottom: 0;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+//**SECTION OPINIONS**//
+
+.section {
+    .opinions {
+        .opinion-box {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            height: 100%;
+            border: 1px solid rgb(219, 219, 219);
+
+            &__thoughts {
+                padding-bottom: 2rem;
+                margin: 1rem 0;
+                line-height: 150%;
+            }
+
+            &__button {
+                @include button;
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translate(-50%);
+                width: 80%;
+                font-size: 1rem;
+                border: 1px solid $main-color;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 0 1rem;
+
+                &__name {
+                    font-weight: bold;
+                    color: $main-color;
+                }
+
+                &__revenue {
+                    margin-top: 0.4rem;
+
+                }
+            }
+        }
+    }
+}
+
+//**FOOTER**//
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 4rem;
+
+    &-item {
+        &__heading {
+            padding-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        &__description {
+            margin-bottom: 1rem;
+            line-height: 120%;
+        }
+
+        &__list * {
+            padding: 0.2rem 0;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+
+@import './_small.scss';
+@import './_medium.scss';
+@import './_large.scss';
