@@ -1,7 +1,7 @@
 
 new Glide('.glide', {
     type: 'carousel',
-    autoplay: 3000,
+    autoplay: 2000,
     perView: 3,
     gap: 30,
     animationDuration: 1000,
